@@ -1,0 +1,19 @@
+<app-alert-component [display]="displayAlert" [type]="alertType" [message]="alertMessage" (closeEvent)="closeAlert()">
+</app-alert-component>
+
+<form [formGroup]="requestBooksForm" (ngSubmit)="requestBook()" style="margin-left: 82px;">
+    <div class="form">
+        <h3 class="text-warning" style="margin-left: 150px"> Request Books </h3>
+        <!-- <app-input [name]="'userId'" [placeholder]="'userId'" [formGroup]="requestBooksForm">
+        </app-input>
+        <app-input [name]="'bookId'" [placeholder]="'bookId'" [formGroup]="requestBooksForm">
+        </app-input> -->
+        <app-input [name]="'fromDate'" [type]="'date'" [placeholder]="'fromDate'" [formGroup]="requestBooksForm">
+        </app-input>
+        <app-input [name]="'endDate'" [type]="'date'" [placeholder]="'endDate'" [formGroup]="requestBooksForm">
+        </app-input>
+        <div class="panel-footer ml-4">
+            <button class="btn btn-warning" type="submit" id="save">Request </button>
+        </div>
+    </div>
+</form>

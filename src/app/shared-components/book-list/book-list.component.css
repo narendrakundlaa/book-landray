@@ -1,0 +1,15 @@
+.posi2 {
+    width: 227px;
+    position: absolute;
+
+    z-index: 299;
+    left: 352px;
+   
+    top: -164px;
+}
+.search {
+    position: relative;
+    top: -79px;
+    z-index: 900;
+    left: 160px;
+}

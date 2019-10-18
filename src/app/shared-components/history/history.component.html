@@ -1,0 +1,28 @@
+<app-alert-component [display]="displayAlert" [type]="alertType" [message]="alertMessage" (closeEvent)="closeAlert()">
+</app-alert-component>
+<table class="table" *ngIf="history">
+    <thead>
+        <tr>
+            <th>Author Name</th>
+            <th>Book Name</th>
+            <th>Book Status</th>
+            <th>genre</th>
+            <th>rating</th>
+            <th>Status</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let book of history">
+            <td> {{book.authorName}}</td>
+            <td> {{book.bookId}}</td>
+            <td> {{book.bookName}}</td>
+            <td> {{book.genre}}</td>
+
+            <td> {{book.rating}}</td>
+            <td>{{book.bookStatus}}</td>
+
+        </tr>
+    </tbody>
+</table>

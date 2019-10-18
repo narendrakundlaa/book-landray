@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md bg-warning navbar-warning sticky-top zindex">
+    <a class="navbar-brand"></a>
+    <span class="text-white">online book shopping </span>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb"
+        aria-expanded="true">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navb" class="navbar-collapse collapse hide">
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/list">Home</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="userId && isLogin" class="nav-link" routerLinkActive="active"
+                    routerLink="/history">History</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="!isLogin" class="nav-link" routerLinkActive="active" routerLink="/login"><span
+                        class="fas fa-sign-in-alt"></span> Login</a>
+            </li>
+
+            <li class="nav-item">
+                <a *ngIf="userId && isLogin" class="nav-link" routerLinkActive="active" routerLink="/create"> Add Book
+                </a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="userId && isLogin" class="nav-link" routerLinkActive="active" routerLink="/list">
+                    <span class="fas fa-user"></span> {{currentEmail}}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="isLogin" (click)="logout()" class="nav-link" routerLinkActive="active"
+                    routerLink="/login"><span class="fas fa-sign-in-alt"></span>
+                    Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

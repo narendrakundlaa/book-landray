@@ -1,0 +1,13 @@
+.form {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    left: 200px;
+    background: #5893c5;
+    width: 49%;
+    margin-top: 30px;
+}
+#save {
+    margin-left: 250px;
+    margin-bottom: 10px;
+}

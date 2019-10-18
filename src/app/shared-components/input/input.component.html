@@ -1,0 +1,11 @@
+<div *ngIf="formGroup" [formGroup]="formGroup" class="container">
+    <div class="row">
+        <div class="col-25">
+            <label class="text-white" for="{{name}}">{{name | titlecase}} </label>
+        </div>
+        <div class="col-75">
+            : <input [attr.type]="type || 'text'" [formControlName]="name" id="{{name}}" name="{{name}}"
+                [attr.placeholder]="placeholder | titlecase" />
+        </div>
+    </div>
+</div>

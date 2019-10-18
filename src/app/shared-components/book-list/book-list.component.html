@@ -1,0 +1,50 @@
+<ul class=" posi2">
+    <li><input [(ngModel)]="searchText" class="form-control mr-sm-4" type="text" placeholder="Search for Books">
+    </li>
+</ul>
+
+<div class="container search">
+    <div class="row">
+        <div class="col-lg-12">
+            Search Books : <input [(ngModel)]="searchText" type="text" placeholder="Search for Books"
+                (keyup)="getBookList()">
+        </div>
+    </div>
+</div>
+
+<app-alert-component [display]="displayAlert" [type]="alertType" [message]="alertMessage" (closeEvent)="closeAlert()">
+</app-alert-component>
+
+<table class="table" *ngIf="books">
+    <thead>
+        <tr>
+            <th>Author Name</th>
+            <th>Book Name</th>
+            <th>Book Status</th>
+            <th>genre</th>
+            <th>rating</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let book of books">
+            <td> {{book.authorName}}</td>
+            <td> {{book.bookId}}</td>
+            <td> {{book.bookName}}</td>
+            <td> {{book.genre}}</td>
+
+            <td> {{book.rating}}</td>
+            <td>{{book.bookStatus}}</td>
+            <td>
+                <a *ngIf="book.bookStatus == 'available'" routerLinkActive="active" class="text-success"
+                    routerLink="/borrow" (click)="bookID(book.bookId)"> Borrow</a>
+                <a *ngIf="book.bookStatus != 'available'" class="text-warning" routerLinkActive="active"
+                    routerLink="/request" (click)="bookID(book.bookId)"> Request</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- history -->
